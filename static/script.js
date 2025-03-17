@@ -7,26 +7,26 @@ var B = "world!"
 var C = A + B;
 console.log(C);
 
-function SumNPrint(x1,x2) {
-    var x3 = x1 + x2;
-    console.log(x3);
-}
+//function SumNPrint(x1,x2) {
+   // var x3 = x1 + x2;
+   // console.log(x3);
+//}
 
-SumNPrint(x,y);
-SumNPrint(A,B);
+//SumNPrint(x,y);
+//SumNPrint(A,B);
 
-if(C.length > z){
+/*if(C.length > z){
     console.log(C);
 }
 else if (C.length < z){
     console.log(z);
 }
-else(console.log("good job!"))
+else(console.log("good job!"))/*
 
-const L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
-const L2 = ["Apple", "Banana", "Kiwi", "Orange"];
+//const L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
+//const L2 = ["Apple", "Banana", "Kiwi", "Orange"];
 
-function findTheBanana(arr, label){
+/*function findTheBanana(arr, label){
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] === "Banana") {
           alert("Found the banana in index " + i);
@@ -37,7 +37,7 @@ function findTheBanana(arr, label){
             alert("We found a banana in the " + label + " array");
         }
     });
-}
+}*/
 
 //findTheBanana(L1, "first");
 //findTheBanana(L2, "second");
