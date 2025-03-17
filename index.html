@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="./static/script.js"></script>
+    <script defer src="./static/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -26,16 +26,16 @@
     </header>
     <div>
         <main>
-            <h2 id="dynamicHeader">Hi, my name is Matt!</h2>
+            <h2 id = "greeting"></h2>
             <img src = "static/me.png" alt = "Picture of me">
             <div class="bio">
                 <p id="shortBio">
                     I am an Information Systems major at Carnegie Mellon University.
-                    <span class = "read-more-button">Read More</span>
+                    <a href = "#" class = "read-more-button">Read More</a>
                 </p>
-                <p id="fullBio">
-                    I am an Information Systems major at Carnegie Mellon University. <br> I am from Pittsburgh, PA, but my family is originally from Russia.
-                    <span class = "read-less-button"> Read Less</span>
+                <p id="fullBio" style = "display: none">
+                    I am an Information Systems major at Carnegie Mellon University. <br> I am from Pittsburgh, PA, but my family is originally from Russia.<br>Explore this page to learn more about me! 
+                    <a href="#" class="read-less-button">Read Less</a>
                 </p>
             </div>
         </main>

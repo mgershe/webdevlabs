@@ -60,6 +60,7 @@ function greetingFunc() {
     }
 }
 greetingFunc();
+
 function addYear() {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
@@ -109,13 +110,18 @@ function validateForm() {
 
 }
 $(document).ready(function() {
-    $('.read-more-button').click(function() {
-      $('#fullBio').fadeIn();
-      $('.read-more-button').hide();
-    });
-    
-    $('.read-less-button').click(function() {
-      $('#fullBio').hide();
-      $('.read-more-button').show();
-    });
+  console.log("jQuery is loaded!");
+  $("#fullBio").hide();
+  $('.read-more-button').on("click",function(e) {
+    e.preventDefault();
+    $("#shortBio").hide();
+    $('#fullBio').show();
+    $('.read-more-button').hide();
   });
+    
+  $('.read-less-button').on("click",function(e) {
+    $('#fullBio').hide();
+    $("#shortBio").show();
+    $('.read-more-button').show();
+  });
+});
