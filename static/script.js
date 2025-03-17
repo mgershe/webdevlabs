@@ -39,8 +39,8 @@ function findTheBanana(arr, label){
     });
 }
 
-findTheBanana(L1, "first");
-findTheBanana(L2, "second");
+//findTheBanana(L1, "first");
+//findTheBanana(L2, "second");
 
 function greetingFunc() {
     var d = new Date();
@@ -60,3 +60,62 @@ function greetingFunc() {
     }
 }
 greetingFunc();
+function addYear() {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const footerText = document.getElementById("copyYear");
+    footerText.innerHTML = `&#169; Designed and Coded by Matt Gershenzon ${currentYear}`;
+
+}
+function showList() {
+    const list = document.getElementById("funList");
+    const btn = document.getElementById("showListBtn");
+    list.style.display = "block";
+    btn.style.display = "none";
+}
+
+function validateForm() {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    nameInput.setCustomValidity("");
+    emailInput.setCustomValidity("");
+    messageInput.setCustomValidity("");
+    let messages = [];
+
+     
+  if (!nameInput.checkValidity()) {
+    nameInput.setCustomValidity("Please enter your name.");
+    messages.push(nameInput.validationMessage);
+  }
+
+  if (!emailInput.checkValidity()) {
+    emailInput.setCustomValidity("Please enter a valid email address.");
+    messages.push(emailInput.validationMessage);
+  }
+
+  if (!messageInput.checkValidity()) {
+    messageInput.setCustomValidity("Please enter a message.");
+    messages.push(messageInput.validationMessage);
+  }
+
+  // If there are any messages, display them and prevent form submission
+  if (messages.length > 0) {
+    document.getElementById("validationMessage").innerHTML = messages.join("<br>");
+    return false;
+  }
+  document.getElementById("validationMessage").innerHTML = "";
+  return true;
+
+}
+$(document).ready(function() {
+    $('.read-more-button').click(function() {
+      $('#fullBio').fadeIn();
+      $('.read-more-button').hide();
+    });
+    
+    $('.read-less-button').click(function() {
+      $('#fullBio').hide();
+      $('.read-more-button').show();
+    });
+  });

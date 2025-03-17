@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer src="./static/script.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./static/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <meta name="description" content="Matt Gershenzon professional website">
     <title>Matt Gershenzon</title>
 </head>
-<body style="font-family: Arial">
+<body style="font-family: Arial" onload = "addYear()">
     <header style="color:blue;">
         <h1 id="webname">
             Matt Gershenzon
@@ -24,16 +24,25 @@
             <a href = "views/fun.html">Hobbies</a>
         </nav>
     </header>
-    <div><main>
-        <h2 id = "greeting">
-        </h2>
-        <img src = "static/me.png" alt = "Picture of me">
-        <p id="intro">Welcome to my website! <br>I am an information systems major at Carnegie Mellon University.<br>
-            I was born and raised in Pittsburgh, but my family is from Russia.<br>
-            Navigate through these pages to learn more about me!</p>
+    <div>
+        <main>
+            <h2 id="dynamicHeader">Hi, my name is Matt!</h2>
+            <img src = "static/me.png" alt = "Picture of me">
+            <div class="bio">
+                <p id="shortBio">
+                    I am an Information Systems major at Carnegie Mellon University.
+                    <span class = "read-more-button">Read More</span>
+                </p>
+                <p id="fullBio">
+                    I am an Information Systems major at Carnegie Mellon University. <br> I am from Pittsburgh, PA, but my family is originally from Russia.
+                    <span class = "read-less-button"> Read Less</span>
+                </p>
+            </div>
         </main>
     </div>
-    <footer> &#169; 2025 Designed and Coded by Matt Gershenzon </footer>
-    
+    <footer>
+        <p id = "copyYear">
+        </p>  
+    </footer>
 </body>
 </html>
