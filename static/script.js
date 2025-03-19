@@ -46,19 +46,22 @@ function greetingFunc() {
     var d = new Date();
     var h = d.getHours();
     var E = document.getElementById("greeting");
-    if(h>=5 && h < 12) {
-       E.innerHTML = "Good morning, I am Matt Gershenzon";
+    if(E)
+      {
+      if(h>=5 && h < 12) {
+        E.innerHTML = "Good morning, I am Matt Gershenzon";
+      }
+      else if(h >= 12 && h<18){
+          E.innerHTML = "Good afternoon, I am Matt Gershenzon";
+      }
+      else if (h >= 18 && h < 20){
+          E.innerHTML = "Good evening, I am Matt Gershenzon";
+      }
+      else{
+          E.innerHTML = "Good night, I am Matt Gershenzon";
+      }
     }
-    else if(h >= 12 && h<18){
-        E.innerHTML = "Good afternoon, I am Matt Gershenzon";
-    }
-    else if (h >= 18 && h < 20){
-        E.innerHTML = "Good evening, I am Matt Gershenzon";
-    }
-    else{
-        E.innerHTML = "Good night, I am Matt Gershenzon";
-    }
-}
+  }
 greetingFunc();
 
 function addYear() {
@@ -68,12 +71,12 @@ function addYear() {
     footerText.innerHTML = `&#169; Designed and Coded by Matt Gershenzon ${currentYear}`;
 
 }
-function showList() {
+/*function showList() {
     const list = document.getElementById("funList");
     const btn = document.getElementById("showListBtn");
     list.style.display = "block";
     btn.style.display = "none";
-}
+}*/
 
 function validateForm() {
     const nameInput = document.getElementById("name");
@@ -110,7 +113,6 @@ function validateForm() {
 
 }
 $(document).ready(function() {
-  console.log("jQuery is loaded!");
   $("#fullBio").hide();
   $('.read-more-button').on("click",function(e) {
     e.preventDefault();
@@ -125,3 +127,15 @@ $(document).ready(function() {
     $('.read-more-button').show();
   });
 });
+
+function getAdvice() {
+  fetch("https://api.adviceslip.com/advice")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("adviceText").innerText = data.slip.advice;
+        })
+        .catch(error => {
+            console.error("Error fetching advice:", error);
+            document.getElementById("adviceText").innerText = "Sorry, something went wrong. Please try again.";
+        });
+}

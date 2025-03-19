@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script defer src="../static/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,17 +24,37 @@
             <a href = "fun.html">Hobbies</a>
         </nav>
     </header>
-    <div><main>
-        <h2>
-            Things I Love to do For Fun
-        </h2>
-        <button id="showListBtn" onclick="showList()">Click to see...</button>
-        <ul id ="funList" style = "display: none">
-            <li>Ski</li>
-            <li>Play Soccer</li>
-            <li>Watch Sports</li>
-        </ul>
-        </main></div>
+    <div class = "mainLayout">
+        <div id = "item1">
+            <h2>
+                Things I Love to do For Fun
+            </h2>
+            <ul id ="funList">
+                <li>Ski</li>
+                <li>Play Soccer</li>
+                <li>Watch Sports</li>
+            </ul>
+        </div>
+        <!--button id="showListBtn" onclick="showList()">Click to see...</button>!-->
+        <div id ="item2">
+            <img class = "funIMG" src = "../static/ski.PNG" alt = "ski">
+        </div>
+        <div id = "item3">
+            <iframe width = "480" height = "280"
+                src="https://www.youtube.com/embed/46BlNerbPIQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div id = "item4">
+            <div class = "container">
+            <h2> Need Some Advice?</h2>
+            <p id = "adviceText">Click the button to get a random piece of advice!</p>
+            <button onclick="getAdvice()">Get Advice</button>
+            </div>
+        </div>
+    </div>
         <footer>
             <p id = "copyYear">
                 &#169; Designed and Coded by Matt Gershenzon

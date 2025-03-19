@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script defer src="../static/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,45 +24,54 @@
             <a href = "fun.html">Hobbies</a>
         </nav>
     </header>
-    <div><main>
-        <h2>
-            Contact Me
-        </h2>
-        <form action="contact.html" method="GET" novalidate onsubmit = "return validateForm()">
-            <!--Name/email fields -->
-            <div class="form-row">
-              <label for="name">Your name (required)</label><br>
-              <input type="text" id="name" name="name" required>
-              <br>
-          
-              <label for="email">Your email (required)</label><br>
-              <input type="email" id="email" name="email" required>
-            </div>
-          
-            <!--Large text area -->
-            <div class="form-row">
-              <textarea id="message" name="message" rows="5" placeholder="Write your comment here..." required></textarea>
-            </div>
-
-            <div id="validationMessage"></div>
-            <!-- Send button -->
-            <button type="submit">SEND</button>
-          </form>
-          <table>
-            <thead>Contact Method</thead><br>
-            <tbody>
-                <tr>
-                    <td>Phone Number: 412-378-7879</td>
-                </tr>
-                <br>
-                <tr>
-                    <td> Email: mgershe2@andrew.cmu.edu</td>
-                </tr>
-                <br>
-            </tbody>
-          </table>
-    </main>
-</div>
+    <div class="mainLayout">
+        <div id="item1">
+            <h2>Find Me</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.928375879418!2d-79.9452406!3d40.4469226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f22289fcf803:0xb8947151950f3e8e!2sMudge%20House!5e0!3m2!1sen!2sus!4v1679182972000!5m2!1sen!2sus"  
+                width="600" 
+                height="450" 
+                style="border:0; width: 100%; max-width: 600px; height: 400px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        <div id="item2">
+            <h2>Contact Me</h2>
+            <form action="contact.html" method="GET" novalidate onsubmit="return validateForm()">
+                <!-- Name/email fields -->
+                <div class="form-row">
+                  <label for="name">Your name (required)</label><br>
+                  <input type="text" id="name" name="name" required>
+                  <br>
+                  <label for="email">Your email (required)</label><br>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <!-- Large text area -->
+                <div class="form-row">
+                  <textarea id="message" name="message" rows="5" placeholder="Write your comment here..." required></textarea>
+                </div>
+                <div id="validationMessage"></div>
+                <!-- Send button -->
+                <button type="submit">SEND</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Contact Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Phone Number: 412-378-7879</td>
+                    </tr>
+                    <tr>
+                        <td>Email: mgershe2@andrew.cmu.edu</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 <footer>
     <p id = "copyYear">
         &#169; Designed and Coded by Matt Gershenzon
